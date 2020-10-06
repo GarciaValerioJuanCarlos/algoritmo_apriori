@@ -6,23 +6,25 @@ import java.util.*                       //Para manejo de arreglos
 ////Para almacenar los datos
 var datos = arrayListOf<String>()	//Aquí, guardaremos cada fila de datos
 var totalDeTransacciones = 0	//Saber la cantidad de transacciones
-var letras = Arrays.asList("a","b","c","d","e")	//Arreglo para almacenar las cadenas que pertenecen a las transacciones
+var letras = Arrays.asList("a","b","c","d","e","f","g")	//Arreglo para almacenar las cadenas que pertenecen a las transacciones
 var L = ArrayList<String>()		//Para el evento A
 var L2 = ArrayList<String>()	//Para el evento B
 var C = ArrayList<Double>()		//Para la cobertura
 var P = ArrayList<Double>()		//Para la cobertura
-var umbral = 0.6	//Para almacenar la cobertura
+var umbral = 0.2	//Para almacenar la cobertura
 //Variable de tipo string para almacenar cada resultado de forma entendible
 var reporte ="|----------------------------------------------------|\n"+
         "|                ------Reporte------                 |\n"+
         "|----------------------------------------------------|\n"
 
 fun main(args : Array<String>){
-    datos.add("a,b,c")	//Agregamos un elemento a nuestro arreglo
-    datos.add("a,d,e")
-    datos.add("b,d,e")
-    datos.add("a,b,d,e")
-    datos.add("a,b,c,e")
+    datos.add("a,d,f,g")	//Agregamos un elemento a nuestro arreglo
+    datos.add("b,e")
+    datos.add("c,e")
+    datos.add("b,c,e,f")
+    datos.add("a,b,g")
+    datos.add("c,e,f,g")
+    datos.add("a,b")
     totalDeTransacciones=datos.count()	//Conseguimos el total de transacciones
     algoritmoPriori()	//Llamamos a nuestro algoritmo apriori
 }
@@ -41,7 +43,7 @@ fun algoritmoPriori(){
     var numCob=0.0
     //denominador de cobertura
     var denCob =totalDeTransacciones
-    reporte=reporte+"\tIteracion 1\n"
+    reporte=reporte+"\t----Iteracion 1\n"
     
     //For usado para crear las reglas de asociacion
     for(i in 0..letrasA.count()-1){
@@ -91,9 +93,7 @@ fun algoritmoPriori(){
     var anterior=""
     var elementosActuales = L.count()-1
     do {
-        if(listafinal != L.count()){
-            reporte=reporte+"\tIteracion "+(iteracion+2)+"\n"
-        }
+        reporte=reporte+"\t----Iteracion "+(iteracion+2)+"\n\t"
         //Vamos a hacer las combinaciones
         //Vamos a ir recorriendo L, uno por uno para hacer las combinaciones donde tengamos A-> B,C Ó A,B->C
         //Esto es después de crear las L sucesivas
@@ -379,4 +379,3 @@ fun getPrecision(cadenaL : String, cadenaL2:String) : Double{
     //Devolvemos la precision
     return (numeradorP/denominadorP).toDouble()
 }
-
