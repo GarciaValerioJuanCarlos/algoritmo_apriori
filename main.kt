@@ -6,12 +6,12 @@ import java.util.*                       //Para manejo de arreglos
 ////Para almacenar los datos
 var datos = arrayListOf<String>()	//Aquí, guardaremos cada fila de datos
 var totalDeTransacciones = 0	//Saber la cantidad de transacciones
-var letras = Arrays.asList("a","b","c","d","e","f","g")	//Arreglo para almacenar las cadenas que pertenecen a las transacciones
+var letras = Arrays.asList("a","b","c","d","e")	//Arreglo para almacenar las cadenas que pertenecen a las transacciones
 var L = ArrayList<String>()		//Para el evento A
 var L2 = ArrayList<String>()	//Para el evento B
 var C = ArrayList<Double>()		//Para la cobertura
 var P = ArrayList<Double>()		//Para la cobertura
-var umbral = 0.2	//Para almacenar la cobertura
+var umbral = 0.4	//Para almacenar la cobertura
 //Variable de tipo string para almacenar cada resultado de forma entendible
 var reporte ="|----------------------------------------------------|\n"+
         "|                ------Reporte------                 |\n"+
@@ -377,4 +377,3 @@ fun getPrecision(cadenaL : String, cadenaL2:String) : Double{
     //Devolvemos la precision
     return (numeradorP/denominadorP).toDouble()
 }
-
