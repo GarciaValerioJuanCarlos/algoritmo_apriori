@@ -18,13 +18,11 @@ var reporte ="|----------------------------------------------------|\n"+
         "|----------------------------------------------------|\n"
 
 fun main(args : Array<String>){
-    datos.add("a,d,f,g")	//Agregamos un elemento a nuestro arreglo
-    datos.add("b,e")
-    datos.add("c,e")
-    datos.add("b,c,e")
-    datos.add("a,b,f")
-    datos.add("c,g")
-    datos.add("a,b,e,f,g")
+    datos.add("a,b,c")	//Agregamos un elemento a nuestro arreglo
+    datos.add("a,d,e")
+    datos.add("b,d,e)
+    datos.add("a,b,d,e")
+    datos.add("a,b,c,e")
     totalDeTransacciones=datos.count()	//Conseguimos el total de transacciones
     algoritmoPriori()	//Llamamos a nuestro algoritmo apriori
 }
