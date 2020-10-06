@@ -21,10 +21,10 @@ fun main(args : Array<String>){
     datos.add("a,d,f,g")	//Agregamos un elemento a nuestro arreglo
     datos.add("b,e")
     datos.add("c,e")
-    datos.add("b,c,e,f")
-    datos.add("a,b,g")
-    datos.add("c,e,f,g")
-    datos.add("a,b")
+    datos.add("b,c,e")
+    datos.add("a,b,f")
+    datos.add("c,g")
+    datos.add("a,b,e,f,g")
     totalDeTransacciones=datos.count()	//Conseguimos el total de transacciones
     algoritmoPriori()	//Llamamos a nuestro algoritmo apriori
 }
@@ -379,3 +379,4 @@ fun getPrecision(cadenaL : String, cadenaL2:String) : Double{
     //Devolvemos la precision
     return (numeradorP/denominadorP).toDouble()
 }
+
