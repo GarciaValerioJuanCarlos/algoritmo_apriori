@@ -20,7 +20,7 @@ var reporte ="|----------------------------------------------------|\n"+
 fun main(args : Array<String>){
     datos.add("a,b,c")	//Agregamos un elemento a nuestro arreglo
     datos.add("a,d,e")
-    datos.add("b,d,e)
+    datos.add("b,d,e")
     datos.add("a,b,d,e")
     datos.add("a,b,c,e")
     totalDeTransacciones=datos.count()	//Conseguimos el total de transacciones
